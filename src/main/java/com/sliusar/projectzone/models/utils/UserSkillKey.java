@@ -12,10 +12,10 @@ import java.io.Serializable;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class DevSkillKey implements Serializable {
+public class UserSkillKey implements Serializable {
 
-    @Column(name = "developer_id")
-    Long developerId;
+    @Column(name = "user_id")
+    Long userId;
 
     @Column(name = "skill_id")
     Long skillId;

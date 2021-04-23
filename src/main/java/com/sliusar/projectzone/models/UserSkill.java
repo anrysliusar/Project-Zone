@@ -1,6 +1,6 @@
 package com.sliusar.projectzone.models;
 
-import com.sliusar.projectzone.models.utils.DevSkillKey;
+import com.sliusar.projectzone.models.utils.UserSkillKey;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,14 +13,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class DeveloperSkill {
+public class UserSkill {
     @EmbeddedId
-    private DevSkillKey id;
+    private UserSkillKey id;
 
     @ManyToOne
-    @MapsId("developerId")
-    @JoinColumn(name = "developer_id")
-    private Developer developer;
+    @MapsId("userId")
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @ManyToOne
     @MapsId("skillId")
