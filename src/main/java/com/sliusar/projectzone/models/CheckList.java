@@ -12,14 +12,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class TaskList {
+public class CheckList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String title;
-    private String stage;
+    private String description;
     
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Project project;
+
 }
