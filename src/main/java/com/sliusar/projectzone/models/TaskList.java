@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class CheckList {
+public class TaskList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -23,4 +24,7 @@ public class CheckList {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Project project;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "tasklist_id")
+    private List<Task> taskList;
 }

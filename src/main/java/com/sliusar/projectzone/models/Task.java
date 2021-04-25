@@ -25,7 +25,7 @@ public class Task {
     private String stage;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private CheckList checkList;
+    private TaskList taskList;
 
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
