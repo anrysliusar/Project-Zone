@@ -28,6 +28,6 @@ public class Project {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "project_id")
-    private List<CheckList> checkLists = new ArrayList<>();
+    private List<TaskList> taskLists = new ArrayList<>();
 
 }

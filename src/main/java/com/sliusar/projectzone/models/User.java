@@ -27,12 +27,17 @@ public class User {
     private String phone;
     private boolean status;//active inActive
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Enumerated
+    private List<Role> roles;
+
     @OneToMany(mappedBy = "user")
     private Set<UserSkill> userSkills;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<Task> tasks = new ArrayList<>();
+
 
 
 }

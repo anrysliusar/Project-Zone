@@ -20,10 +20,6 @@ public class Access {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @Enumerated
-    private List<Role> roles;
-
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
