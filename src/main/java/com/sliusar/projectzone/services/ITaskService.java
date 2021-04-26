@@ -5,14 +5,13 @@ import com.sliusar.projectzone.models.Task;
 import java.util.List;
 import java.util.Optional;
 
-public interface TaskService {
+public interface ITaskService {
     List<Task> getAll();
     Optional<Task> getById(int id);
     void save(Task task);
-    void update(Task task, int taskId);
+    void update(Task task, int taskListId);
     void deleteById(int id);
-    void updateTodo(Task task, int taskListId);
 
-    void addTodo(Task task, int taskListId);
-    void removeTodo(int taskId, int taskListId);
+    void addTask(Task task, int taskListId);
+    void removeTask(int taskId, int taskListId);
 }
