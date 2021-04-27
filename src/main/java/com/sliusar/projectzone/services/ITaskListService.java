@@ -14,5 +14,5 @@ public interface ITaskListService {
     void deleteById(int id);
 
     void addTaskList(TaskList taskList, int projectId);
-    void removeTaskList(int taskId, int taskListId);
+    void removeTaskList(int taskListId, int projectId);
 }
