@@ -38,6 +38,9 @@ public class User {
     @JoinColumn(name = "user_id")
     private List<Task> tasks = new ArrayList<>();
 
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Project project;
+
 
 
 }
