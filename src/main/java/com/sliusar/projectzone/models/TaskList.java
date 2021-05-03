@@ -25,6 +25,6 @@ public class TaskList {
     private Project project;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "tasklist_id")
+    @JoinColumn(name = "task_list_id")
     private List<Task> taskList;
 }
