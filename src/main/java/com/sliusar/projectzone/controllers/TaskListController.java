@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/taskLists")
 public class TaskListController {
     @Qualifier("tlsi")
     private final ITaskListService taskListService;

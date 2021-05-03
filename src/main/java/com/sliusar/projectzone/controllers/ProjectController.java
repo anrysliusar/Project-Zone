@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/projects")
 public class ProjectController {
     @Qualifier("psi")
     private final IProjectService projectService;
