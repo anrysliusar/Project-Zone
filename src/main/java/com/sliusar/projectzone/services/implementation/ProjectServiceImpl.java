@@ -40,7 +40,7 @@ public class ProjectServiceImpl implements IProjectService {
             Project chosenProject = projectRepository.getOne(projectId);
             project.setId(projectId);
             project.setTaskLists(chosenProject.getTaskLists());
-            project.setAccessList(chosenProject.getAccessList());
+            project.setMemberList(chosenProject.getMemberList());
             projectRepository.save(project);
         }
     }
