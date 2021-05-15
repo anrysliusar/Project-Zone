@@ -31,9 +31,9 @@ public class TaskController {
         taskService.update(task, taskListId);
     }
 
-    @PostMapping("/{id}/addTask")
-    public void addTodo(@PathVariable int id, @RequestBody Task task) {
-        taskService.addTask(task, id);
+    @PostMapping("/{id}/addTask/{userId}")
+    public void addTodo(@PathVariable("id") int id, @RequestBody Task task, @PathVariable("userId") int userId) {
+        taskService.addTask(task, id, userId);
     }
 
     @DeleteMapping("/{taskListId}/delete/{taskId}")

@@ -12,6 +12,6 @@ public interface ITaskService {
     void update(Task task, int taskListId);
     void deleteById(int id);
 
-    void addTask(Task task, int taskListId);
+    void addTask(Task task, int taskListId, int userId);
     void removeTask(int taskId, int taskListId);
 }

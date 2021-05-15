@@ -2,8 +2,10 @@ package com.sliusar.projectzone.services.implementation;
 
 import com.sliusar.projectzone.models.Task;
 import com.sliusar.projectzone.models.TaskList;
+import com.sliusar.projectzone.models.User;
 import com.sliusar.projectzone.repositories.TaskListRepository;
 import com.sliusar.projectzone.repositories.TaskRepository;
+import com.sliusar.projectzone.repositories.UserRepository;
 import com.sliusar.projectzone.services.ITaskService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,6 +21,7 @@ import java.util.Optional;
 public class TaskServiceImpl implements ITaskService {
     private final TaskRepository taskRepository;
     private final TaskListRepository taskListRepository;
+    private final UserRepository userRepository;
 
     @Override
     public List<Task> getAll() {
@@ -56,8 +59,10 @@ public class TaskServiceImpl implements ITaskService {
     }
 
     @Override
-    public void addTask(Task task, int taskListId) {
+    public void addTask(Task task, int taskListId, int userId) {
         TaskList taskListToAddingTask = taskListRepository.getOne(taskListId);
+        User responsibleUser = userRepository.getOne(userId);
+        task.setUser(responsibleUser);
         if (taskListToAddingTask.getTaskList() != null){
             taskListToAddingTask.getTaskList().add(task);
         }else {
