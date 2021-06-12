@@ -15,9 +15,8 @@ public interface IUserService {
     User findByUsernameAndPassword(String username, String password);
     void saveUser(User user);
     void update(User user, int id);
-    void addSkill(Skill skill, int userId);
+    void addSkill(Skill skill, int userId, byte level);
     void addToProject(int projectId, int userId);
     void assignTask(int taskId, int userId);
 
-    void addRole(User user, int roleId);
 }
