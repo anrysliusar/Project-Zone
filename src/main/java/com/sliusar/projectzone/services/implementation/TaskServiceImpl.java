@@ -23,22 +23,18 @@ public class TaskServiceImpl implements ITaskService {
     private final TaskListRepository taskListRepository;
     private final UserRepository userRepository;
 
-    @Override
     public List<Task> getAll() {
         return taskRepository.findAll();
     }
 
-    @Override
     public Optional<Task> getById(int id) {
         return taskRepository.findById(id);
     }
 
-    @Override
     public void save(Task task) {
         taskRepository.save(task);
     }
 
-    @Override
     public void update(Task task, int taskListId) {
         TaskList taskListForUpdatingTask = taskListRepository.getOne(taskListId);
         List<Task> tasks = taskListForUpdatingTask.getTaskList();
@@ -53,12 +49,10 @@ public class TaskServiceImpl implements ITaskService {
         taskListRepository.save(taskListForUpdatingTask);
     }
 
-    @Override
     public void deleteById(int id) {
         taskRepository.deleteById(id);
     }
 
-    @Override
     public void addTask(Task task, int taskListId, int userId) {
         TaskList taskListToAddingTask = taskListRepository.getOne(taskListId);
         User responsibleUser = userRepository.getOne(userId);
@@ -73,7 +67,6 @@ public class TaskServiceImpl implements ITaskService {
 
     }
 
-    @Override
     public void removeTask(int taskId, int taskListId) {
         TaskList taskListToDeleteTask = taskListRepository.getOne(taskListId);
         taskListToDeleteTask.getTaskList().removeIf(task -> task.getId() == taskId);

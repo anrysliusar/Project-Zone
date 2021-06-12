@@ -18,48 +18,40 @@ import java.util.Optional;
 @Qualifier("usi")
 @AllArgsConstructor
 public class UserServiceImpl implements IUserService {
+
     private UserRepository userRepository;
-    private Project project;
 
 
 
-    @Override
     public List<User> getAll() {
         return null; //todo
     }
 
-    @Override
     public Optional<User> getById(int id) {
         return userRepository.findById(id);
     }
 
-    @Override
     public void save(User user) {
         userRepository.save(user);
     }
 
-    @Override
     public void update(User user, int id) {
         user.setId(id);
         userRepository.save(user);
     }
 
-    @Override
     public void addSkill(Skill skill, int userId) {
 //        todo
     }
 
-    @Override
     public void addToProject(int projectId, int userId) {
 //        todo
     }
 
-    @Override
     public void assignTask(int taskId, int userId) {
 //        todo
     }
 
-    @Override
     public void addRole(User user, int roleId) {
 //        todo
     }

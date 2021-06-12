@@ -14,27 +14,23 @@ import java.util.Optional;
 @Qualifier("psi")
 @AllArgsConstructor
 public class ProjectServiceImpl implements IProjectService {
+
     private final ProjectRepository projectRepository;
 
-
-    @Override
     public List<Project> getAll() {
         return projectRepository.findAll();
     }
 
-    @Override
     public Optional<Project> getById(int id) {
         return projectRepository.findById(id);
     }
 
-    @Override
     public void save(Project project) {
         if(project != null){
             projectRepository.save(project);
         }
     }
 
-    @Override
     public void update(Project project, int projectId) {
         if (projectRepository.existsById(projectId)){
             Project chosenProject = projectRepository.getOne(projectId);
@@ -45,7 +41,6 @@ public class ProjectServiceImpl implements IProjectService {
         }
     }
 
-    @Override
     public void deleteById(int id) {
         projectRepository.deleteById(id);
     }
