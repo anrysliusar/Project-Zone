@@ -11,7 +11,9 @@ import java.util.Optional;
 public interface IUserService {
     List<User> getAll();
     Optional<User> getById(int id);
-    void save(User user);
+    User findByUsername(String username);
+    User findByUsernameAndPassword(String username, String password);
+    void saveUser(User user);
     void update(User user, int id);
     void addSkill(Skill skill, int userId);
     void addToProject(int projectId, int userId);

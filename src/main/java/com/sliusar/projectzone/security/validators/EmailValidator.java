@@ -1,4 +1,4 @@
-package com.sliusar.projectzone.security.Valitators;
+package com.sliusar.projectzone.security.validators;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
