@@ -1,8 +1,7 @@
 package com.sliusar.projectzone.models;
 
 import com.sliusar.projectzone.models.utils.Role;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,6 +11,9 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +33,8 @@ public class User {
     @Enumerated
     private List<Role> roles;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
     private Set<UserSkill> userSkills;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
