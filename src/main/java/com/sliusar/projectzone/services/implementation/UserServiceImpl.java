@@ -61,7 +61,7 @@ public class UserServiceImpl implements IUserService {
         user.setId(id);
         userRepository.save(user);
     }
-
+// Todo
     public void addSkill(Skill skill, int userId, byte level) {
         User userForAddingSkill = userRepository.findById(userId).orElseThrow(() -> new ProjectZoneException(ErrorType.USR_NOT_FOUND.getMessage()));
         UserSkill userSkill = new UserSkill();
