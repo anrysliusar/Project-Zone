@@ -2,6 +2,7 @@ package com.sliusar.projectzone.controllers;
 
 import com.sliusar.projectzone.models.Project;
 import com.sliusar.projectzone.services.IProjectService;
+import com.sliusar.projectzone.services.IUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,9 @@ import java.util.Optional;
 public class ProjectController {
     @Qualifier("psi")
     private final IProjectService projectService;
+
+    @Qualifier("usi")
+    private final IUserService userService;
 
     @GetMapping()
     public List<Project> getAll(){
@@ -40,4 +44,12 @@ public class ProjectController {
     public void delete(@PathVariable int id) {
         projectService.deleteById(id);
     }
+
+    @PostMapping("/addUser/{userId}/{projectId}")
+    public void addUserToProject(@PathVariable("userId") int userId, @PathVariable("projectId") int projectId){
+        userService.addToProject(projectId, userId);
+    }
+
+
+
 }
