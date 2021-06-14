@@ -14,14 +14,14 @@ import javax.persistence.*;
 @Setter
 public class UserSkill {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Skill skill;
 
     private byte skillLevel;
-
 }
