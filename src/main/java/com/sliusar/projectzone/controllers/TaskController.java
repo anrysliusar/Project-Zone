@@ -2,6 +2,7 @@ package com.sliusar.projectzone.controllers;
 
 import com.sliusar.projectzone.models.Task;
 import com.sliusar.projectzone.services.ITaskService;
+import com.sliusar.projectzone.services.IUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,9 @@ import java.util.Optional;
 public class TaskController {
     @Qualifier("tsi")
     private final ITaskService taskService;
+
+    @Qualifier("usi")
+    private final IUserService userService;
 
     @GetMapping()
     public List<Task> getAll(){
@@ -40,4 +44,10 @@ public class TaskController {
     public void deleteTodo(@PathVariable("taskListId") int taskListId, @PathVariable("taskId") int taskId) {
         taskService.removeTask(taskId, taskListId);
     }
+
+    @PostMapping("/{taskId}/addUser/{userId}")
+    public void appointUser(@PathVariable("userId") int userId, @PathVariable("taskId") int taskId) {
+        userService.assignTask(taskId, userId);
+    }
+
 }
