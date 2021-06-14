@@ -1,12 +1,11 @@
-1. Аутентификация ***
-	-Mail Sender
-2. При передачи в ерору, вывести адекватное сообщение.(Nikitos)
-3. Чекнуть в постмене работают ли методы (Andrew)
-4. Написать пару методов в контролеры(которые добавил) (Andrew)
-5. Тесты (Andrew)
-6. Накидать инфу в базу данных(для фронта (Богдан пусть пч))
-7. Дизайн (функциональность страничек) (Мы + Бодя)
-Андрюха это Настя Мирная с 6-б (Я ЛЮБЛЮ ТЕБЯ )!
+1. Authentication ***
+    -Mail Sender
+2. When throwing an exception, display an adequate message. (Nikita)
+3. Finish controllers (Andrew)
+4. Test (Andrew)
+5. Add information to the database (for the front (Bohdan))
+6. Design (All)
+
 
 
 
